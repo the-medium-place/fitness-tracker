@@ -38,6 +38,12 @@ input {
 
 
 /* display box styling */
+.workout-wrapper {
+    /* display: flex; */
+    flex-direction: column-reverse;
+}
+
+
 .workout-title {
     width: 100%;
     margin: 5px auto;
