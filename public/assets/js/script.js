@@ -13,87 +13,112 @@ $(function () {
         }).then((dbWorkout) => {
             console.log(dbWorkout);
             location.reload();
-
-
-
         })
     })
 
 
-    $(".new-exercise").on("submit", function (event) {
+    // update exercise form submitted
+    $(".update-form").on("submit", function (event) {
         event.preventDefault();
-        console.log($(this).id);
+    
+        const updateObj = {
+            _id: $(this).attr("id"),
+            name: event.target[0].value.trim(),
+            count: event.target[1].value.trim(),
+            unit: event.target[2].value.trim(),
+            notes: event.target[3].value.trim()
+        }
+        console.table(updateObj);
 
-        const exerName = $("#exer-name");
-        const exerCount = $("#exer-count");
-        const exerUnit = $("#exer-unit");
-        const exerNotes = $("#exer-notes");
 
+        $.ajax({
+            url: "/api/exercises",
+            method: "PUT",
+            data: updateObj
+        }).then((dbExercise) => {
+            location.reload();
+            console.log(dbExercise);
+        })
+    })
 
+    $(".new-exercise").on("submit", function(event){
+        event.preventDefault();
+        console.log($(this).attr("id"));
+        const newExerObj = {
+            _id: $(this).attr("id"),
+            name: event.target[0].value.trim(),
+            count: event.target[1].value.trim(),
+            unit: event.target[2].value.trim(),
+            notes: event.target[3].value.trim()
+        }
+        console.log("script side");
+        console.table(newExerObj);
+        
+        $.ajax({
+            url: "/api/exercises",
+            method: "POST",
+            data: newExerObj
+        })
+        .then(dbExercise => {
 
+            // another call to reload page
+            $.ajax({
+                url: "",
+                context: document.body,
+                success: function (data, err){
+                    $(this).html(data);
+                }
+            })
+        })
+    })  
+    
+    $(".exer-delete").click(function(event) {
+        event.preventDefault();
+        console.log($(this).attr("id"))
 
+        $.ajax({
+            url:"/api/exercises",
+            method: "DELETE",
+            data: {_id: $(this).attr("id")}
+        }).then((dbExercise) => {
+            // console.log(dbExercise);
+            // location.reload();
+             // another call to reload page
+             $.ajax({
+                url: "/",
+                context: document.body,
+                success: function (data, err){
+                    if (err) console.log(err);
+                    $(this).html(data);
+                }
+            })
+        })
+    })
+
+    $(".workout-delete").click(function(event) {
+        event.preventDefault();
+        console.log($(this).attr("id"))
+
+        $.ajax({
+            url:"/api/workouts",
+            method: "DELETE",
+            data: {_id: $(this).attr("id")}
+        }).then((dbWorkout) => {
+            // console.log(dbExercise);
+            // location.reload();
+             // another call to reload page
+             $.ajax({
+                url: "/",
+                context: document.body,
+                success: function (data, err){
+                    if (err) console.log(err);
+                    $(this).html(data);
+                }
+            })
+        })
     })
 
 
 
-    function populatePage() {
-        $.ajax({
-            url: "/populatedworkouts",
-            method: "GET"
-        })
-            .then(dbWorkout => {
-
-                console.log(dbWorkout);
-
-                // for(i in dbWorkout){
-                // console.log(test);  
-                // //JQUERY TIME
-                // const titleDiv = $("<div>");
-                // titleDiv.attr("class", "workout-title");
-                // const title = dbWorkout[i].name;
-                // titleDiv.text(title);
-
-                // //make new div .workout-container #_id
-                // const workoutDiv = $("<div>");
-                // workoutDiv.attr("class", "workout-container");
-                // workoutDiv.attr("id", dbWorkout[i]._id);
-                // workoutDiv.append(titleDiv)
-
-                // //run through array of dbWorkout.exercises
-                // for(j in dbWorkout[i].exercises) {
-                //     const exercises = dbWorkout[i].exercises[j];
-                //     //for each exercise make new div .exercise-container
-                //     const exerDiv = $("<div>");
-                //     exerDiv.attr("class", "exercise-container");
-                //     exerDiv.attr("id", exercises._id)
-
-                //     //add exercise name
-                //     const nameP = $("<p>");
-                //     nameP.text(exercises.name);
-                //     nameP.attr("class", "exercise-name")
-                //     exerDiv.append(nameP);
-
-                //     //add exercise count / units
-                //     const countP = $("<p>");
-                //     countP.text(`Repeat for ${exercises.count} ${exercises.unit}`);
-                //     exerDiv.append(countP);
-
-                //     //add exercise notes
-                //     const notesP = $("<p>");
-                //     notesP.text(`Notes: ${exercises.notes}`);
-                //     exerDiv.append(notesP);
-
-                //     //append div to parent div .workout-container
-                //     workoutDiv.append(exerDiv);
-
-
-                // }
-                // //append workout div to div .workout-wrapper
-                // $(".workout-wrapper").append(workoutDiv);
-                // }
-            })
-    }
-
-    // populatePage();
 
 });

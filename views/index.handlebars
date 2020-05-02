@@ -1,14 +1,34 @@
 <div class="workout-wrapper">
-{{#each workouts}}
-<div class="workout-container" id="{{_id}}">
 
-{{!-- <div class="workout-title">{{title}}</div> --}}
 
-{{> workout-block}}
+    {{#each workouts}}
 
+    <div class="workout-container" id="{{_id}}">
+        <div class="workout-title" id="{{_id}}">{{name}}<button class="workout-delete" id="{{_id}}">Delete Exercise</button>
 </div>
+        <div class="exercise-entry">
+            <form class="new-exercise" id="{{_id}}">
+                <div class="form-group">
+                    <label for="exer-name">New Exercise Name:</label>
+                    <input type="text" name="exer-name" placeholder="push-ups, eat bananas">
+                </div>
+                <div class="form-group">
+                    <label for="exer-count">Enter The Quantity and Units</label>
+                    <input type="number" name="exer-count" placeholder="number">
+                    <input type="text" name="exer-count" placeholder="reps, minutes, bananas">
+                </div>
+                <div class="form-group">
+                    <label for="exer-notes">Notes:</label>
+                    <input type="text" name="exer-notes" placeholder="new PR! 100 Bananas!">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        {{> workout-block}}
 
-{{/each}}
+    </div>
+
+    {{/each}}
 
 
 </div>
