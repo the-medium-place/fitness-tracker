@@ -8,6 +8,13 @@ View the deployed app [HERE](https://awesome-fitness-tracker.herokuapp.com/)
 
 ![Screenshot](public\assets\images\screenshot1.png)
 
+## Build Tools
+
+* [JQuery](https://jquery.com/)
+* [Node JS](https://nodejs.org/en/)
+* [Handlebars](https://handlebarsjs.com/)
+* [Mongoose](https://mongoosejs.com/)
+
 
 
 ## Contributing:
