@@ -92,7 +92,9 @@ $(function () {
                     $(this).html(data);
                 }
             })
+            
         })
+        setTimeout(function(){ location.reload(); }, 100);
     })
 
     $(".workout-delete").click(function(event) {
@@ -104,21 +106,25 @@ $(function () {
             method: "DELETE",
             data: {_id: $(this).attr("id")}
         }).then((dbWorkout) => {
-            // console.log(dbExercise);
+            console.log('script side')
+          
             // location.reload();
              // another call to reload page
-             $.ajax({
-                url: "/",
-                context: document.body,
-                success: function (data, err){
-                    if (err) console.log(err);
-                    $(this).html(data);
-                }
+            //  $.ajax({
+            //     url: "/",
+            //     context: document.body,
+            //     success: function (data, err){
+            //         if (err) console.log(err);
+            //         $(this).html(data);
+            //     }
             })
+            setTimeout(function(){ location.reload(); }, 100);
+
         })
     })
 
 
 
 
-});
+
+

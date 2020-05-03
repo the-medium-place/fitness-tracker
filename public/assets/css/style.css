@@ -82,7 +82,7 @@ body {
     width: 17%;
     border: 1px solid black;
     padding: 4px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: lightblue;
     box-shadow: 3px 3px 5px black;
 
@@ -143,5 +143,5 @@ body {
 
 .exer-buttons {
     flex-direction: row;
-    
+
 }
