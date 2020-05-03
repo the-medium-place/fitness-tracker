@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessdb", {
 
 app.get("/", (req,res) => {
     db.Workout.find({})
-    .populate("exercises").lean() //.lean() to make JSON object from Mongoose object
+    .populate("exercises").sort({date:-1}).lean() //.lean() to make JSON object from Mongoose object
     .then(dbWorkout => {   
 
         res.render("index", {workouts: dbWorkout})
@@ -75,7 +75,7 @@ app.put("/api/exercises", (req, res) => {
 })
 
 app.get("/populatedworkouts", (req, res) => {
-    db.Workout.find({}).sort({date:1})
+    db.Workout.find({}).sort({date:'asc'})
         .populate("exercises")
         .then(dbWorkout => {
             // dbWorkout = dbWorkout.reverse();
