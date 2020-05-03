@@ -1,3 +1,5 @@
+{{#if exercises}}
+
 {{#each exercises}}
 <div class="exercise-container" id="{{_id}}">
     <form class="update-form" id="{{_id}}">
@@ -8,9 +10,17 @@
         {{!-- <input class="exercise-count" value="Repeat for {{count}} {{unit}}!"> --}}
         <textarea class="exercise-notes" value="{{notes}}" rows="5" cols="25">{{notes}}</textarea>
         <div class="exer-buttons">
-        <button type="submit">Update This Exercise!</button>
-        <button class="exer-delete" id="{{_id}}">Delete Exercise</button>
-</div>
+            <button type="submit">Update!</button>
+            <button class="exer-delete" id="{{_id}}">Delete</button>
+        </div>
     </form>
 </div>
 {{/each}}
+
+{{else}}
+
+<div class="empty-exer">
+    <h2>Add exercises to this workout!</h2>
+</div>
+
+{{/if}}

@@ -4,12 +4,15 @@
 With this tracker the user can create a workout plan by entering the Plan Name at the top of the page.  Each workout window has an entry form to create individual exercises.  This is an assignment for the UW Coding Bootcamp and utilizes Node JS, Express, and Mongoose DB. This app has full Create, Read, Update and Delete functionality for all entered info.  
 
 ## Usage: 
-visit deployed app at
+View the deployed app [HERE](https://awesome-fitness-tracker.herokuapp.com/)
+
+## screenshots to come
 
 
 
 ## Contributing:
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/)
+
 ## Questions:
 * GitHub Profile:  [the-medium-place](https://github.com/the-medium-place)
 * Email: <zgstowell@gmail.com>

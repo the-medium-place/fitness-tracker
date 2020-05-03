@@ -16,25 +16,22 @@ body {
        background-color: lightseagreen;
        border: none;
        max-height: 20%;
-
 }
-
 
 /* input form styling */
 .user-input {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: center;
     margin: 20px auto;
 }
 .user-input img {
-    max-height: 300px;
-}
-.user-input input {
-    margin: 4px auto;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .workout-entry {
+    margin: 0 auto;
     display: flex;
     flex-direction:column;
 }
@@ -74,11 +71,17 @@ body {
 
 }
 
+.work-empty-container {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
 .exercise-container {
     flex-direction: column;
     justify-content: start;
     margin: 10px 0px;
-    height: 15vw;
+    height: auto;
     width: 17%;
     border: 1px solid black;
     padding: 4px;
@@ -103,7 +106,10 @@ body {
     font-size: 1.2em;
     max-width: 95%;
     margin-top: 3px;
+}
 
+.empty-exer {
+    text-align: center;
 }
 
 .workout-wrapper {

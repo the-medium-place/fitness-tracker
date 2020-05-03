@@ -1,11 +1,12 @@
 <div class="workout-wrapper">
 
-
+    {{#if workouts}}
     {{#each workouts}}
 
     <div class="workout-container" id="{{_id}}">
-        <div class="workout-title" id="{{_id}}">{{name}}<button class="workout-delete" id="{{_id}}">Delete Exercise</button>
-</div>
+        <div class="workout-title" id="{{_id}}">{{name}}<button class="workout-delete" id="{{_id}}">Delete
+                Exercise</button>
+        </div>
         <div class="exercise-entry">
             <form class="new-exercise" id="{{_id}}">
                 <div class="form-group">
@@ -29,6 +30,13 @@
     </div>
 
     {{/each}}
+    {{else}}
+    <div class="work-empty-container">
+        <h1>No Workouts Yet!</h1>
+        <br>
+        <h3>Create a workout to begin your Fitness Monkey Journey!</h2>
+    </div>
+    {{/if}}
 
 
 </div>

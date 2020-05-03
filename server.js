@@ -63,7 +63,7 @@ app.post("/api/exercises", ({ body }, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.send(dbWorkout);
+            res.send(err);
         })
 })
 
