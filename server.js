@@ -37,14 +37,6 @@ app.get("/", (req,res) => {
 
 })
 
-
-const dummyObj = {
-    name: "eat bananas",
-    count: 20,
-    unit: "bananas",
-    notes: "only the green ones"
-}
-
 app.post("/api/exercises", ({ body }, res) => {
     const newObj = {
         name: body.name,
@@ -83,10 +75,10 @@ app.put("/api/exercises", (req, res) => {
 })
 
 app.get("/populatedworkouts", (req, res) => {
-    db.Workout.find({})
+    db.Workout.find({}).sort({date:1})
         .populate("exercises")
         .then(dbWorkout => {
-            dbWorkout = dbWorkout.reverse();
+            // dbWorkout = dbWorkout.reverse();
             res.render({workouts: dbWorkout})
             // res.json(dbWorkout);
         })

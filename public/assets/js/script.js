@@ -1,4 +1,5 @@
 
+
 $(function () {
 
     $(".new-workout").on("submit", function (event) {
@@ -99,7 +100,7 @@ $(function () {
 
     $(".workout-delete").click(function(event) {
         event.preventDefault();
-        console.log($(this).attr("id"))
+        console.log($(this).attr("id"));
 
         $.ajax({
             url:"/api/workouts",
@@ -107,16 +108,6 @@ $(function () {
             data: {_id: $(this).attr("id")}
         }).then((dbWorkout) => {
             console.log('script side')
-          
-            // location.reload();
-             // another call to reload page
-            //  $.ajax({
-            //     url: "/",
-            //     context: document.body,
-            //     success: function (data, err){
-            //         if (err) console.log(err);
-            //         $(this).html(data);
-            //     }
             })
             setTimeout(function(){ location.reload(); }, 100);
 

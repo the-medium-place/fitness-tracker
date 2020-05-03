@@ -4,6 +4,11 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+button {
+    background-color: rgb(221, 221, 24);
+    border-color: rgb(185, 185, 19);
+}
+
 .exercise-container input {
     /* border-radius: 5px; */
     background-color: lightseagreen;
