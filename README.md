@@ -6,7 +6,7 @@ With this tracker the user can create a workout plan by entering the Plan Name a
 ## Usage: 
 View the deployed app [HERE](https://awesome-fitness-tracker.herokuapp.com/)
 
-![Screenshot](public\assets\images\screenshot1.png)
+![Screenshot](public/assets/images/screenshot1.png)
 
 ## Build Tools
 
