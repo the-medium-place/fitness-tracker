@@ -1,12 +1,12 @@
 
-<a href="https://awesome-monkey-fitness.herokuapp.com/"><h1>Fitness Tracker</h1></a>
+<a href="https://awesome-fitness-tracker.herokuapp.com/"><h1>Fitness Tracker</h1></a>
 
 ## Description:
 
 With this tracker the user can create a workout plan by entering the Plan Name at the top of the page.  Each workout window has an entry form to create individual exercises.  This is an assignment for the UW Coding Bootcamp and utilizes Node JS, Express, and Mongoose DB. This app has full Create, Read, Update and Delete functionality for all entered info.  
 
 ## Usage: 
-View the deployed app [HERE](https://awesome-monkey-fitness.herokuapp.com/)
+View the deployed app [HERE](https://awesome-fitness-tracker.herokuapp.com/)
 
 * Create a workout regimen by entering the name under 'Enter Workout' 
 * In new box, create new exercises by enter the name, quantity, and unit for each exercise as well as an optional note. _Example:_
