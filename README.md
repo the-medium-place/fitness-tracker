@@ -1,14 +1,27 @@
-# Fitness Tracker
 
-## Description: 
+<a href="https://awesome-fitness-tracker.herokuapp.com/"><h1>Fitness Tracker</h1></a>
+
+## Description:
+
 With this tracker the user can create a workout plan by entering the Plan Name at the top of the page.  Each workout window has an entry form to create individual exercises.  This is an assignment for the UW Coding Bootcamp and utilizes Node JS, Express, and Mongoose DB. This app has full Create, Read, Update and Delete functionality for all entered info.  
 
 ## Usage: 
 View the deployed app [HERE](https://awesome-fitness-tracker.herokuapp.com/)
 
+* Create a workout regimen by entering the name under 'Enter Workout' 
+* In new box, create new exercises by enter the name, quantity, and unit for each exercise as well as an optional note. _Example:_
+    * _Name:_  'Bench Press'
+    * _Quantity:_ '12'
+    * _Units:_ 'Reps'
+    * _Notes:_ '3 Sets / 215 Lbs'
+* Update exercises by clicking in text field to edit and clicking the 'Update!' button
+* Delete an exercise or workout regimen by clicking the red 'Delete' button.
+* Repeat
+* Get swole!
+
 ![Screenshot](public/assets/images/screenshot1.png)
 
-## Build Tools
+## Technologies
 
 * [JQuery](https://jquery.com/)
 * [Node JS](https://nodejs.org/en/)
