@@ -19,7 +19,7 @@
   "homepage": "https://github.com/the-medium-place/fitness-tracker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
+    "express-handlebars": "^5.3.1",
     "handlebars": "^4.7.6",
     "mongoose": "^5.9.11"
   }
