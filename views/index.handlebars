@@ -7,26 +7,32 @@
         <div class="workout-title" id="{{_id}}">{{name}}<button class="workout-delete" id="{{_id}}">Delete
                 Workout</button>
         </div>
-        <div class="exercise-entry">
-            <form class="new-exercise" id="{{_id}}">
-                <div class="form-group">
-                    <label for="exer-name">New Exercise Name:</label>
-                    <input type="text" name="exer-name" placeholder="push-ups, eat bananas">
-                </div>
-                <div class="form-group">
-                    <label for="exer-count">Enter The Quantity and Units</label>
-                    <input type="number" name="exer-count" placeholder="number">
-                    <input type="text" name="exer-count" placeholder="reps, minutes, bananas">
-                </div>
-                <div class="form-group">
-                    <label for="exer-notes">Notes:</label>
-                    <input type="text" name="exer-notes" placeholder="new PR! 100 Bananas!">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div class="exercise-entry exercise-container">
+                <h3 style="text-align: center;">Add Exercise</h3>
+                <form class="new-exercise" id="{{_id}}">
+                    <div class="form-group d-flex justify-content-center">
+                        <label for="exer-name"><strong>Exercise Name:</strong></label>
+                        <br />
+                        <input class="exer-name" type="text" name="exer-name" placeholder="push-ups, eat bananas">
+                    </div>
+                    <div class="form-group">
+                        <label for="exer-count"><strong>Quantity</strong> and <strong>Units</strong></label>
+                        <br />
+                        <input type="number" name="exer-count" placeholder="number">
+                        <input type="text" name="exer-count" placeholder="reps, minutes, bananas">
+                    </div>
+                    <div class="form-group">
+                        <label for="exer-notes"><strong>Notes:</strong></label>
+                        <br />
+                        <textarea type="text" name="exer-notes" placeholder="new PR! 100 Bananas!"
+                            class="exercise-notes" rows="5" cols="25"></textarea>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            {{> workout-block}}
         </div>
-        {{> workout-block}}
-
     </div>
 
     {{/each}}

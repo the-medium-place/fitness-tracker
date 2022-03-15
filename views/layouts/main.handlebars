@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width={device-width}, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <!-- user entry div -->
     <div class="user-input">
+        <div class="logo-div" style="display: flex; flex-direction: column; justify-content: center;">
 
-        <img src="/assets/images/monkey.png">
-        <img src="/assets/images/monkeyLogo.png">
+            <img src="/assets/images/monkey.png">
+            <img src="/assets/images/monkeyLogo.png">
 
+        </div>
+        <div style="border: 1px solid black; width: 85%; margin: 24px auto;"></div>
         <div class="workout-entry">
             <form class="new-workout">
-                <label for="name">Enter Workout:</label>
-                <input type="text" id="reg-name-input" placeholder="Workout Name">
-                <button type="submit">Enter</button>
+                <label for="name" style="font-size: 175%;">Create New Workout:</label>
+                <br />
+                <div style="width: 100%; display: flex; align-items: center;">
+                    <input type="text" id="reg-name-input" placeholder="Workout Name">
+                    <button type="submit">Enter</button>
+                </div>
             </form>
         </div>
+        <div style="border: 1px solid black; width: 85%; margin: 24px auto;"></div>
+
     </div>
 
-{{{ body }}}
+    {{{ body }}}
 
-   <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="/assets/js/script.js"></script>
 </body>
+
 </html>

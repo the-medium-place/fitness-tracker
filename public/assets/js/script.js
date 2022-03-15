@@ -21,7 +21,7 @@ $(function () {
     // update exercise form submitted
     $(".update-form").on("submit", function (event) {
         event.preventDefault();
-    
+
         const updateObj = {
             _id: $(this).attr("id"),
             name: event.target[0].value.trim(),
@@ -37,12 +37,22 @@ $(function () {
             method: "PUT",
             data: updateObj
         }).then((dbExercise) => {
-            location.reload();
+            // location.reload();
             console.log(dbExercise);
+            $(`#status-${$(this).attr("id")}`).text("Exercise Updated.")
+        }).then(() => {
+            setTimeout(() => {
+                $(`#status-${$(this).attr("id")}`).empty();
+            }, 1500);
+
+        }).catch(err => {
+            console.error(err);
+            $(`#status-${$(this).attr("id")}`).text("There was an error...");
+
         })
     })
 
-    $(".new-exercise").on("submit", function(event){
+    $(".new-exercise").on("submit", function (event) {
         event.preventDefault();
         console.log($(this).attr("id"));
         const newExerObj = {
@@ -54,65 +64,65 @@ $(function () {
         }
         console.log("script side");
         console.table(newExerObj);
-        
+
         $.ajax({
             url: "/api/exercises",
             method: "POST",
             data: newExerObj
         })
-        .then(dbExercise => {
+            .then(dbExercise => {
 
-            // another call to reload page
-            $.ajax({
-                url: "",
-                context: document.body,
-                success: function (data, err){
-                    $(this).html(data);
-                }
+                // another call to reload page
+                $.ajax({
+                    url: "",
+                    context: document.body,
+                    success: function (data, err) {
+                        $(this).html(data);
+                    }
+                })
             })
-        })
-    })  
-    
-    $(".exer-delete").click(function(event) {
+    })
+
+    $(".exer-delete").click(function (event) {
         event.preventDefault();
         console.log($(this).attr("id"))
 
         $.ajax({
-            url:"/api/exercises",
+            url: "/api/exercises",
             method: "DELETE",
-            data: {_id: $(this).attr("id")}
+            data: { _id: $(this).attr("id") }
         }).then((dbExercise) => {
             // console.log(dbExercise);
             // location.reload();
-             // another call to reload page
-             $.ajax({
+            // another call to reload page
+            $.ajax({
                 url: "/",
                 context: document.body,
-                success: function (data, err){
+                success: function (data, err) {
                     if (err) console.log(err);
                     $(this).html(data);
                 }
             })
-            
+
         })
-        setTimeout(function(){ location.reload(); }, 100);
+        setTimeout(function () { location.reload(); }, 100);
     })
 
-    $(".workout-delete").click(function(event) {
+    $(".workout-delete").click(function (event) {
         event.preventDefault();
         console.log($(this).attr("id"));
 
         $.ajax({
-            url:"/api/workouts",
+            url: "/api/workouts",
             method: "DELETE",
-            data: {_id: $(this).attr("id")}
+            data: { _id: $(this).attr("id") }
         }).then((dbWorkout) => {
             console.log('script side')
-            })
-            setTimeout(function(){ location.reload(); }, 100);
-
         })
+        setTimeout(function () { location.reload(); }, 100);
+
     })
+})
 
 
 

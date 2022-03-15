@@ -14,13 +14,14 @@
             <button class="exer-delete" id="{{_id}}">Delete</button>
         </div>
     </form>
+    <p class="status-alert" id="status-{{_id}}"></p>
 </div>
 {{/each}}
 
 {{else}}
 
 <div class="empty-exer">
-    <h2>Add exercises to this workout!</h2>
+    {{!-- <h2>Add exercises to this workout!</h2> --}}
 </div>
 
 {{/if}}
